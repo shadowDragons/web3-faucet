@@ -12,8 +12,8 @@ datasource db {
   shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") // used for migrations
 }
 
-model faucetUser {
+model faucet {
   id            String    @default(cuid()) @id
   email         String   @unique
-  faucetTime    DateTime?
+  faucetTime    DateTime
 }

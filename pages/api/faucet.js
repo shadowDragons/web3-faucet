@@ -2,7 +2,7 @@ import { getServerSession } from "next-auth/next"
 import { authOptions } from "./auth/[...nextauth]"
 import { ethers } from "ethers";
 
-const RPC_URL = process.env.RPC_LOCAL_URL;
+const RPC_URL = process.env.RPC_URL;
 const provider = new ethers.JsonRpcProvider(RPC_URL);
 
 // 利用私钥和provider创建wallet对象
@@ -15,7 +15,6 @@ export default async function handler(req, res) {
 
   const session = await getServerSession(req, res, authOptions)
   if (session) {
-    console.log(session.user.email)
     const tx = {
       to: address,
       value: ethers.parseEther("0.001")

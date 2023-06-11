@@ -14,9 +14,9 @@ export default function Home() {
         const response = await fetch("/api/faucet?address=" + address);
         let rs = await response.json()
         if (response.status != 200) {
-          console.log(rs.code)
+          console.log(rs)
         } else {
-          console.log(rs.hash)
+          console.log(rs)
         }
      }
    }

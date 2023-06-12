@@ -1,6 +1,6 @@
 ### 一个 sepolia 的测试网水龙头
 
-技术栈：`Next.js` + `NextAuth` + `prisma` + `Ethers.js` + `Vercel` + `PostgreSQL`liu
+技术栈：`Next.js` + `NextAuth` + `prisma` + `Ethers.js` + `Vercel` + `PostgreSQL`
 
 流程：
 
@@ -9,4 +9,4 @@
 
 待完成：
 
-- [] 使用`Tailwind CSS`完善界面
+- [ ] 使用`Tailwind CSS`完善界面

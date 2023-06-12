@@ -1,4 +1,4 @@
-### 一个 sepolia 的测试网水龙头
+### 一个 sepolia 测试网水龙头
 
 技术栈：`Next.js` + `NextAuth` + `prisma` + `Ethers.js` + `Vercel` + `PostgreSQL`
 

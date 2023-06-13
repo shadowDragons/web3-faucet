@@ -50,7 +50,6 @@ async function checkCanFaucet(email)
 }
 
 export default async function handler(req, res) {
-  console.log(11111)
   const query = req.query;
   const { address } = query;
 
@@ -58,11 +57,9 @@ export default async function handler(req, res) {
   if (session) {
     const hasFaucet = await checkCanFaucet(session.user.email);
     if (!hasFaucet) {
-      console.log("24 xiaoshi")
-      res.status(202).json({message: "24小时"});
+      res.status(202).json({message: "Sorry! To be fair to all developers, we only send 0.001 Sepolia ETH every 24 hours. Please try again after 24 hours from your original request."});
       return ;
     }
-    console.log("cheng le ")
     const tx = {
       to: address,
       value: ethers.parseEther("0.001")
@@ -70,7 +67,7 @@ export default async function handler(req, res) {
     try {
       const receipt = await wallet.sendTransaction(tx)
       await receipt.wait() // 等待链上确认交易
-
+      console.log(receipt)
       res.status(200).json(receipt)
     } catch (err) {
       console.log(err)
